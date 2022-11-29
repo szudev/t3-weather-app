@@ -1,9 +1,9 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
 import { BsGithub } from "react-icons/bs";
 import { IoEnterOutline } from "react-icons/io5";
+import HomeLinkButton from "../components/HomeLinkButton";
 
 const Home: NextPage = () => {
   return (
@@ -28,24 +28,24 @@ const Home: NextPage = () => {
           <div className="flex flex-col text-center">
             <span className="text-home-title text-white">T3 Weather App</span>
             <span className="text-home-subtitle text-white">
-              A simple weather app made with love.
+              A simple weather app made with love
             </span>
           </div>
           <div className="flex items-center justify-center gap-4 home-buttons-breakpoint:flex-col">
-            <Link
-              href={"https://www.google.cl"}
-              className="inline-flex w-full justify-center gap-3 rounded bg-gray-300 p-2 text-center font-bold text-gray-800 hover:bg-gray-400"
-            >
-              <IoEnterOutline className="text-home-icons" />
-              <span className="text-home-button">Sitio</span>
-            </Link>
-            <Link
-              href={"https://www.youtube.com"}
-              className="inline-flex w-full justify-center gap-3 rounded border-2 border-gray-300 bg-transparent p-2 text-center font-bold text-gray-800 hover:bg-white hover:bg-opacity-20"
-            >
-              <BsGithub className="text-home-icons text-white" />
-              <span className="text-home-button text-white">Código</span>
-            </Link>
+            <HomeLinkButton
+              url="https://www.google.cl"
+              linkStyle="inline-flex w-full justify-center items-center gap-3 rounded bg-gray-300 p-2 text-center font-bold text-gray-800 hover:bg-gray-400"
+              IconElement={IoEnterOutline}
+              buttonDescription="Entrar"
+              whiteColor={false}
+            />
+            <HomeLinkButton
+              url="https://www.youtube.com"
+              linkStyle="inline-flex w-full justify-center items-center gap-3 rounded border-2 border-gray-300 bg-transparent p-2 text-center font-bold text-gray-800 hover:bg-white hover:bg-opacity-20"
+              IconElement={BsGithub}
+              buttonDescription="Código"
+              whiteColor={true}
+            />
           </div>
           <div className="flex"></div>
           <div className="flex"></div>
