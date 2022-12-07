@@ -1,6 +1,10 @@
 import Image from "next/image";
+import { type InferQueryOutput } from "../pages/api/trpc/[trpc]";
 
-const WeatherCarousel = () => {
+type dataFromServer = InferQueryOutput<"getDefaultWeather">;
+
+const WeatherCarousel = (defaultWeather: dataFromServer) => {
+  console.log(defaultWeather);
   const images = [
     "/weather-conditions/sunny.jpg",
     "/weather-conditions/rainy.jpg",

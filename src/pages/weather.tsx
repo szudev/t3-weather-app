@@ -4,6 +4,7 @@ import { useState } from "react";
 import { setDefaultTheme, setDefaultThemeState } from "../utils/darkTheme";
 import Header from "../components/Header";
 import WeatherCarousel from "../components/WeatherCarousel";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const Weather: NextPage = () => {
   const defaultWeather = trpc.realTimeWeather.getDefaultWeather.useQuery();
@@ -12,12 +13,16 @@ const Weather: NextPage = () => {
   );
   setDefaultTheme();
 
-  if (!defaultWeather.data) return <span>Loading...</span>;
+  //if (!defaultWeather.data) return <LoadingSpinner />;
 
   return (
     <main className="flex min-h-screen w-full flex-col bg-white p-4 @container dark:bg-black">
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
-      <WeatherCarousel />
+      {!defaultWeather.isLoading && defaultWeather.data ? (
+        <WeatherCarousel defaultWeather={defaultWeather} />
+      ) : (
+        <LoadingSpinner />
+      )}
     </main>
   );
 };
