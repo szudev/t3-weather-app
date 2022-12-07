@@ -36,12 +36,13 @@ export const toggleTheme = (
   setDarkMode: Dispatch<SetStateAction<boolean | undefined>>
 ) => {
   const currentTheme = localStorage.getItem("theme");
-
   if (currentTheme === "dark") {
     setLightTheme();
+    setDefaultTheme();
     setDarkMode(false);
   } else {
     setDarkTheme();
+    setDefaultTheme();
     setDarkMode(true);
   }
 };

@@ -1,18 +1,11 @@
 import Image from "next/image";
 import { type InferQueryOutput } from "../pages/api/trpc/[trpc]";
 
-type dataFromServer = InferQueryOutput<"getDefaultWeather">;
+interface WeatherCarouselProps {
+  images: string[];
+}
 
-const WeatherCarousel = (defaultWeather: dataFromServer) => {
-  console.log(defaultWeather);
-  const images = [
-    "/weather-conditions/sunny.jpg",
-    "/weather-conditions/rainy.jpg",
-    "/weather-conditions/foggy.jpg",
-    "/weather-conditions/snowy.jpg",
-    "/weather-conditions/cloudy.jpg",
-  ];
-
+const WeatherCarousel = ({ images }: WeatherCarouselProps) => {
   return (
     <div className="mx-auto my-auto flex max-w-5xl">
       <div className="flex">
