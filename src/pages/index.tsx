@@ -33,7 +33,7 @@ const Home: NextPage = () => {
           </div>
           <div className="flex flex-col items-center justify-center gap-4 @sm:flex-row">
             <HomeLinkButton
-              url="https://www.google.cl"
+              url="/weather"
               linkStyle="inline-flex w-full justify-center items-center gap-3 rounded bg-gray-300 p-2 text-center font-bold text-gray-800 hover:bg-gray-400"
               IconElement={IoEnterOutline}
               buttonDescription="Enter"
@@ -47,8 +47,6 @@ const Home: NextPage = () => {
               whiteColor={true}
             />
           </div>
-          <div className="flex"></div>
-          <div className="flex"></div>
         </div>
       </main>
     </>

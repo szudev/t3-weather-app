@@ -1,22 +1,21 @@
-import { type FC } from "react";
 import Link from "next/link";
 import { type IconType } from "react-icons";
 
-interface HomeLinkButtonProps {
+type HomeLinkButtonProps = {
   url: string;
   linkStyle: string;
   IconElement: IconType;
   buttonDescription: string;
   whiteColor: boolean;
-}
+};
 
-const HomeLinkButton: FC<HomeLinkButtonProps> = ({
+const HomeLinkButton = ({
   url,
   linkStyle,
   IconElement,
   buttonDescription,
   whiteColor,
-}) => {
+}: HomeLinkButtonProps) => {
   return (
     <Link href={url} className={linkStyle}>
       <IconElement

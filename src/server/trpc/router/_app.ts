@@ -1,8 +1,8 @@
 import { router } from "../trpc";
-import { exampleRouter } from "./example";
+import { realTimeWeatherRouter } from "./realTimeWeather";
 
 export const appRouter = router({
-  example: exampleRouter,
+  realTimeWeather: realTimeWeatherRouter,
 });
 
 // export type definition of API
