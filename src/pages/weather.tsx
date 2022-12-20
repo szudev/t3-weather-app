@@ -3,9 +3,7 @@ import { trpc } from "../utils/trpc";
 import { useEffect, useState } from "react";
 import { setDefaultTheme, setDefaultThemeState } from "../utils/darkTheme";
 import Header from "../components/Header";
-import WeatherCarousel from "../components/WeatherCarousel";
 import LoadingSpinner from "../components/LoadingSpinner";
-import { images } from "../utils/images";
 import WeatherCard from "../components/WeatherCard";
 
 const Weather: NextPage = () => {
@@ -22,7 +20,6 @@ const Weather: NextPage = () => {
     <main className="flex min-h-screen w-full flex-col bg-white px-4 pb-4 dark:bg-black">
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
       {!isLoading && defaultWeather ? (
-        //<WeatherCarousel images={images} />
         <WeatherCard
           location={defaultWeather.location}
           current={defaultWeather.current}
