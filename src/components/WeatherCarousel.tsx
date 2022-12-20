@@ -7,7 +7,7 @@ interface WeatherCarouselProps {
 
 const WeatherCarousel = ({ images }: WeatherCarouselProps) => {
   return (
-    <div className="mx-auto my-auto flex max-w-5xl">
+    <div className="m-auto flex max-w-5xl">
       <div className="flex">
         <Image
           src={images[0] as string}

@@ -15,7 +15,7 @@ const Header = ({ darkMode, setDarkMode }: HeaderProps) => {
       <div></div>
       <SearchBar />
       <div className="flex justify-end">
-        <Tooltip content={darkMode ? "Lights" : "Shades"}>
+        <Tooltip content={darkMode ? "Light" : "Dark"}>
           <button
             onClick={() => toggleTheme(setDarkMode)}
             className="flex rounded p-1 hover:bg-gray-400 hover:bg-opacity-40 dark:hover:bg-white dark:hover:bg-opacity-20"

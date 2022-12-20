@@ -18,7 +18,7 @@ const Weather: NextPage = () => {
   }, []);
 
   return (
-    <main className="flex min-h-screen w-full flex-col bg-white p-4 @container dark:bg-black">
+    <main className="flex min-h-screen w-full flex-col bg-white p-4 dark:bg-black">
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
       {!isLoading && defaultWeather ? (
         <WeatherCarousel images={images} />
