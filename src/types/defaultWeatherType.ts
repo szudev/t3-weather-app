@@ -1,4 +1,9 @@
-export type Location = {
+export type DefaultWeatherType = {
+  location: Location;
+  current: Current;
+};
+
+type Location = {
   name: string;
   region: string;
   country: string;
@@ -15,7 +20,7 @@ type Condition = {
   code: number;
 };
 
-export type Current = {
+type Current = {
   last_updated_epoch: number;
   last_updated: string;
   temp_c: number;

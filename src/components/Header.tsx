@@ -11,10 +11,8 @@ type HeaderProps = {
 
 const Header = ({ darkMode, setDarkMode }: HeaderProps) => {
   return (
-    <div className="grid min-h-min-h-header w-full grid-cols-3 items-center bg-white p-4 dark:bg-black">
-      <div></div>
-      <SearchBar />
-      <div className="flex justify-end">
+    <div className="flex min-h-min-h-header w-full flex-col flex-wrap items-center gap-4 bg-white pt-4 dark:bg-black">
+      <div className="flex self-end">
         <Tooltip content={darkMode ? "Light" : "Dark"}>
           <button
             onClick={() => toggleTheme(setDarkMode)}
@@ -28,6 +26,7 @@ const Header = ({ darkMode, setDarkMode }: HeaderProps) => {
           </button>
         </Tooltip>
       </div>
+      <SearchBar />
     </div>
   );
 };

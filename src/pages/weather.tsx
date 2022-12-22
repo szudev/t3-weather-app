@@ -17,7 +17,7 @@ const Weather: NextPage = () => {
   }, []);
 
   return (
-    <main className="flex min-h-screen w-full flex-col bg-white px-4 pb-4 dark:bg-black">
+    <main className="flex min-h-screen w-full flex-col bg-white px-4 pb-4 @container dark:bg-black">
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
       {!isLoading && defaultWeather ? (
         <WeatherCard
