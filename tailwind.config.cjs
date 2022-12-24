@@ -27,7 +27,7 @@ module.exports = {
         "home-title": "clamp(1.50rem, calc(1.12rem + 2.20vw), 3.75rem)",
         "home-subtitle": "clamp(1.25rem, calc(1.08rem + 0.98vw), 2.25rem)",
         "home-button": "clamp(1.25rem, calc(1.19rem + 0.37vw), 1.63rem)",
-        "home-icons": "clamp(1.88rem, calc(1.81rem + 0.37vw), 2.25rem)",
+        "home-icons": "clamp(1.50rem, calc(1.44rem + 0.37vw), 1.88rem)",
         "search-bar-icon-size": "",
       },
       screens: {
