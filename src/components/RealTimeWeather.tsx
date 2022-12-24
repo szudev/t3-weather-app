@@ -44,7 +44,7 @@ const RealTimeWeather = ({ location, current }: WeatherCardProps) => {
         >
           {current.temp_c}°C
         </p>
-        <div className="flex flex-col gap-2 @sm:flex-row @sm:gap-4">
+        <div className="flex flex-col gap-2 pb-2 @md:flex-row @md:gap-4">
           <div className="flex items-center justify-start gap-1 font-light">
             <FaTemperatureLow className="text-2xl text-red-500" />
             <span className="text-xl text-black dark:text-white">
