@@ -10,7 +10,7 @@ const SkeletonCardLoading = () => {
       </div>
       <div className="flex items-center justify-center gap-2 pb-4">
         <svg
-          className="h-12 w-12 text-gray-200"
+          className="h-10 w-10 text-gray-200"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
           fill="currentColor"
