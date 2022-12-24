@@ -3,8 +3,8 @@ import { trpc } from "../utils/trpc";
 import { useEffect, useState } from "react";
 import { setDefaultTheme, setDefaultThemeState } from "../utils/darkTheme";
 import Header from "../components/Header";
-import LoadingSpinner from "../components/LoadingSpinner";
 import WeatherCard from "../components/WeatherCard";
+import SkeletonCardLoading from "../components/SkeletonCardLoading";
 
 const Weather: NextPage = () => {
   const { data: defaultWeather, isLoading } =
@@ -25,7 +25,7 @@ const Weather: NextPage = () => {
           current={defaultWeather.current}
         />
       ) : (
-        <LoadingSpinner />
+        <SkeletonCardLoading />
       )}
     </main>
   );
