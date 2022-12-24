@@ -14,7 +14,7 @@ const RealTimeWeather = ({ location, current }: WeatherCardProps) => {
   );
   return (
     <>
-      <div className="flex flex-col items-center justify-center py-4 @sm:flex-row">
+      <div className="flex flex-col items-center justify-center pt-4 pb-8 @sm:flex-row">
         <p className="text-xl text-black dark:text-white">
           Tuesday, 31 May 2022
         </p>
