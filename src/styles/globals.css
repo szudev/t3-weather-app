@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Courgette&family=Oswald:wght@200;300;400;500;600;700&family=Poppins:ital,wght@1,300&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Oswald", sans-serif;
+  }
+}
