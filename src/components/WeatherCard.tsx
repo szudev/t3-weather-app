@@ -1,7 +1,7 @@
-import type { DefaultWeatherType } from "../types/foreCastWeatherType";
+import type { ForeCastWeatherType } from "../types/foreCastWeatherType";
 import RealTimeWeather from "./RealTimeWeather";
 
-type WeatherCardProps = DefaultWeatherType;
+type WeatherCardProps = ForeCastWeatherType;
 
 const WeatherCard = ({ location, current, forecast }: WeatherCardProps) => {
   return (

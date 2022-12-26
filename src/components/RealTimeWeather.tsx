@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { type DefaultWeatherType } from "../types/foreCastWeatherType";
+import { type ForeCastWeatherType } from "../types/foreCastWeatherType";
 import temperatureRangeColors from "../utils/temperatureRange";
 import { FaTemperatureLow } from "react-icons/fa";
 import { FiWind } from "react-icons/fi";
@@ -11,7 +11,7 @@ import {
   BsArrowDownShort,
 } from "react-icons/bs";
 
-type WeatherCardProps = DefaultWeatherType;
+type WeatherCardProps = ForeCastWeatherType;
 
 const RealTimeWeather = ({ location, current, forecast }: WeatherCardProps) => {
   const conditionIconUrl = current.condition.icon.replace(

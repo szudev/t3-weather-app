@@ -1,4 +1,4 @@
-export type DefaultWeatherType = {
+export type ForeCastWeatherType = {
   location: Location;
   current: Current;
   forecast: Forecast;
@@ -47,13 +47,13 @@ interface Current {
   gust_kph: number;
 }
 
-export interface Condition2 {
+interface Condition2 {
   text: string;
   icon: string;
   code: number;
 }
 
-export interface Day {
+interface Day {
   maxtemp_c: number;
   maxtemp_f: number;
   mintemp_c: number;
@@ -76,7 +76,7 @@ export interface Day {
   uv: number;
 }
 
-export interface Astro {
+interface Astro {
   sunrise: string;
   sunset: string;
   moonrise: string;
@@ -85,13 +85,13 @@ export interface Astro {
   moon_illumination: string;
 }
 
-export interface Condition3 {
+interface Condition3 {
   text: string;
   icon: string;
   code: number;
 }
 
-export interface Hour {
+interface Hour {
   time_epoch: number;
   time: string;
   temp_c: number;
