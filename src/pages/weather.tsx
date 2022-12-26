@@ -23,6 +23,7 @@ const Weather: NextPage = () => {
         <WeatherCard
           location={defaultWeather.location}
           current={defaultWeather.current}
+          forecast={defaultWeather.forecast}
         />
       ) : (
         <SkeletonCardLoading />

@@ -11,7 +11,7 @@ type HeaderProps = {
 
 const Header = ({ darkMode, setDarkMode }: HeaderProps) => {
   return (
-    <div className="flex min-h-min-h-header w-full flex-col flex-wrap items-center gap-4 bg-white pt-4 dark:bg-black">
+    <div className="flex min-h-min-h-header w-full flex-col flex-wrap items-center gap-4 bg-white py-4 dark:bg-black">
       <div className="flex gap-2 self-end">
         <Tooltip content="Geolocation">
           <button

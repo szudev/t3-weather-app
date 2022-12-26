@@ -1,13 +1,19 @@
 import Image from "next/image";
-import { type DefaultWeatherType } from "../types/defaultWeatherType";
+import { type DefaultWeatherType } from "../types/foreCastWeatherType";
 import temperatureRangeColors from "../utils/temperatureRange";
 import { FaTemperatureLow } from "react-icons/fa";
 import { FiWind } from "react-icons/fi";
 import { IoWater } from "react-icons/io5";
+import {
+  BsSunrise,
+  BsSunset,
+  BsArrowUpShort,
+  BsArrowDownShort,
+} from "react-icons/bs";
 
 type WeatherCardProps = DefaultWeatherType;
 
-const RealTimeWeather = ({ location, current }: WeatherCardProps) => {
+const RealTimeWeather = ({ location, current, forecast }: WeatherCardProps) => {
   const conditionIconUrl = current.condition.icon.replace(
     "//cdn.weatherapi.com",
     ""
@@ -44,7 +50,7 @@ const RealTimeWeather = ({ location, current }: WeatherCardProps) => {
         >
           {current.temp_c}°C
         </p>
-        <div className="flex flex-col gap-2 pb-2 @md:flex-row @md:gap-4">
+        <div className="flex flex-col flex-wrap justify-center gap-2 @md:flex-row @md:gap-4">
           <div className="flex items-center justify-start gap-1 font-light">
             <FaTemperatureLow className="text-2xl text-red-500" />
             <span className="text-xl text-black dark:text-white">
@@ -75,6 +81,46 @@ const RealTimeWeather = ({ location, current }: WeatherCardProps) => {
             </span>
             <p className="text-xl font-medium text-black dark:text-white">
               {current.humidity}%
+            </p>
+          </div>
+        </div>
+        <div className="flex flex-col flex-wrap justify-center gap-2 self-start pb-2 @md:flex-row @md:gap-4 @md:self-center">
+          <div className="flex items-center gap-1 font-light">
+            <BsSunrise className="text-2xl text-yellow-400" />
+            <span className="text-xl text-black dark:text-white">Rise:</span>
+            <p className="text-xl font-medium text-black dark:text-white">
+              {forecast.forecastday[0]?.astro.sunrise}
+            </p>
+          </div>
+          <div className="flex items-center gap-1 font-light">
+            <BsSunset className="text-2xl text-indigo-500" />
+            <span className="text-xl text-black dark:text-white">Set:</span>
+            <p className="text-xl font-medium text-black dark:text-white">
+              {forecast.forecastday[0]?.astro.sunset}
+            </p>
+          </div>
+          <div className="flex items-center gap-1 font-light">
+            <BsArrowUpShort className="text-2xl text-black dark:text-white" />
+            <span className="text-xl text-black dark:text-white">Max:</span>
+            <p
+              className={
+                temperatureRangeColors(forecast.forecastday[0]?.day.maxtemp_c) +
+                " text-xl font-medium"
+              }
+            >
+              {forecast.forecastday[0]?.day.maxtemp_c}°C
+            </p>
+          </div>
+          <div className="flex items-center gap-1 font-light">
+            <BsArrowDownShort className="text-2xl text-black dark:text-white" />
+            <span className="text-xl text-black dark:text-white">Min:</span>
+            <p
+              className={
+                temperatureRangeColors(forecast.forecastday[0]?.day.mintemp_c) +
+                " text-xl font-medium"
+              }
+            >
+              {forecast.forecastday[0]?.day.mintemp_c}°C
             </p>
           </div>
         </div>

@@ -5,7 +5,7 @@ import { apiOptions } from "../../../utils/apiOptions";
 export const realTimeWeatherRouter = router({
   getDefaultWeather: publicProcedure.query(async () => {
     const weather = await fetch(
-      "https://weatherapi-com.p.rapidapi.com/current.json?q=Santiago",
+      "https://weatherapi-com.p.rapidapi.com/forecast.json?q=Santiago",
       apiOptions
     );
 
