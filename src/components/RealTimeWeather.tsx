@@ -28,21 +28,19 @@ const RealTimeWeather = ({ location, current, forecast }: WeatherCardProps) => {
           Local Time: 12:46 PM
         </p>
       </div>
-      <div className="flex items-center justify-center">
+      <div className="flex flex-col justify-center pb-8 text-center">
         <p className="text-4xl text-black dark:text-white">{location.name}</p>
-      </div>
-      <div className="flex items-center justify-center">
-        <Image
-          alt={current.condition.text}
-          height={60}
-          width={60}
-          src={conditionIconUrl}
-        />
-        <p className="py-4 text-2xl text-black dark:text-white">
-          {current.condition.text}
-        </p>
-      </div>
-      <div className="flex flex-col items-center justify-between gap-8">
+        <div className="flex items-center justify-center">
+          <Image
+            alt={current.condition.text}
+            height={60}
+            width={60}
+            src={conditionIconUrl}
+          />
+          <p className="py-4 text-2xl text-black dark:text-white">
+            {current.condition.text}
+          </p>
+        </div>
         <p
           className={
             temperatureRangeColors(current.temp_c) + " text-4xl font-bold"
@@ -50,6 +48,8 @@ const RealTimeWeather = ({ location, current, forecast }: WeatherCardProps) => {
         >
           {current.temp_c}°C
         </p>
+      </div>
+      <div className="flex max-w-2xl flex-col items-center justify-center gap-2 pb-2">
         <div className="flex flex-col flex-wrap justify-center gap-2 @md:flex-row @md:gap-4">
           <div className="flex items-center justify-start gap-1 font-light">
             <FaTemperatureLow className="text-2xl text-red-500" />
@@ -83,8 +83,6 @@ const RealTimeWeather = ({ location, current, forecast }: WeatherCardProps) => {
               {current.humidity}%
             </p>
           </div>
-        </div>
-        <div className="flex flex-col flex-wrap justify-center gap-2 self-start pb-2 @md:flex-row @md:gap-4 @md:self-center">
           <div className="flex items-center gap-1 font-light">
             <BsSunrise className="text-2xl text-yellow-400" />
             <span className="text-xl text-black dark:text-white">Rise:</span>
