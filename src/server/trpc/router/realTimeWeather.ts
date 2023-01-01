@@ -9,6 +9,6 @@ export const realTimeWeatherRouter = router({
       apiOptions
     );
 
-    return weather.json();
+    return await weather.json();
   }),
 });
