@@ -17,7 +17,7 @@ const ForecastWeather = ({ forecast }: ForecastWeatherProps) => {
         {forecast.forecastday[0]?.hour.map((hour, index) => {
           return (
             <div
-              className="flex cursor-grab flex-col items-center justify-center"
+              className="flex flex-col items-center justify-center"
               key={index}
             >
               <p className="text-sm font-light">{hour.time_epoch}</p>
