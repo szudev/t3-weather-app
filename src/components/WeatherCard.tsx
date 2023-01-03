@@ -1,5 +1,6 @@
 import type { ForeCastWeatherType } from "../types/foreCastWeatherType";
 import RealTimeWeather from "./RealTimeWeather";
+import ForecastWeather from "./ForecastWeather";
 
 type WeatherCardProps = ForeCastWeatherType;
 
@@ -12,6 +13,7 @@ const WeatherCard = ({ location, current, forecast }: WeatherCardProps) => {
           current={current}
           forecast={forecast}
         />
+        <ForecastWeather forecast={forecast} />
       </div>
     </>
   );

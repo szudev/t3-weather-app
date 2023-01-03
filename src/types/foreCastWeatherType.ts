@@ -4,6 +4,8 @@ export type ForeCastWeatherType = {
   forecast: Forecast;
 };
 
+export type OnlyForecastWeatherType = Pick<ForeCastWeatherType, "forecast">;
+
 interface Location {
   name: string;
   region: string;

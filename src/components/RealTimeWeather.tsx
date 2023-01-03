@@ -49,9 +49,9 @@ const RealTimeWeather = ({ location, current, forecast }: WeatherCardProps) => {
           {current.temp_c}°C
         </p>
       </div>
-      <div className="flex max-w-2xl flex-col items-center justify-center gap-2 pb-2">
+      <div className="center flex max-w-2xl flex-col items-center justify-center gap-2 self-center pb-2">
         <div className="flex flex-col flex-wrap justify-center gap-2 @md:flex-row @md:gap-4">
-          <div className="flex items-center justify-start gap-1 font-light">
+          <div className="flex items-center gap-1 font-light">
             <FaTemperatureLow className="text-2xl text-red-500" />
             <span className="text-xl text-black dark:text-white">
               Real Feel:
@@ -65,7 +65,7 @@ const RealTimeWeather = ({ location, current, forecast }: WeatherCardProps) => {
               {current.feelslike_c}°C
             </p>
           </div>
-          <div className="flex items-center justify-start gap-1 font-light">
+          <div className="flex items-center gap-1 font-light">
             <FiWind className="text-2xl text-green-400" />
             <span className="text-xl text-black dark:text-white">
               Wind Speed:
@@ -74,7 +74,7 @@ const RealTimeWeather = ({ location, current, forecast }: WeatherCardProps) => {
               {current.wind_kph} km/h
             </p>
           </div>
-          <div className="flex items-center justify-start gap-1 font-light">
+          <div className="flex items-center gap-1 font-light">
             <IoWater className="text-2xl text-blue-400" />
             <span className="text-xl text-black dark:text-white">
               Humidity:
