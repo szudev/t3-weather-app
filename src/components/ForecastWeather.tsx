@@ -1,6 +1,7 @@
 import { type OnlyForecastWeatherType } from "../types/foreCastWeatherType";
 import temperatureRangeColors from "../utils/temperatureRange";
 import Image from "next/image";
+import { fromUnixTimeToHours } from "../utils/dateFormatters";
 
 type ForecastWeatherProps = OnlyForecastWeatherType;
 
@@ -20,7 +21,9 @@ const ForecastWeather = ({ forecast }: ForecastWeatherProps) => {
               className="flex flex-col items-center justify-center"
               key={index}
             >
-              <p className="text-sm font-light">{hour.time_epoch}</p>
+              <p className="text-sm font-light">
+                {fromUnixTimeToHours(hour.time_epoch)}
+              </p>
               <Image
                 alt={hour.condition.text}
                 height={60}

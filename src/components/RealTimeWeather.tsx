@@ -10,6 +10,10 @@ import {
   BsArrowUpShort,
   BsArrowDownShort,
 } from "react-icons/bs";
+import {
+  fromUnixtimeToDayNumberAndYear,
+  fromUnixTimeToLocalTime,
+} from "../utils/dateFormatters";
 
 type WeatherCardProps = ForeCastWeatherType;
 
@@ -20,12 +24,12 @@ const RealTimeWeather = ({ location, current, forecast }: WeatherCardProps) => {
   );
   return (
     <>
-      <div className="flex flex-col items-center justify-center pt-4 pb-8 @sm:flex-row">
+      <div className="flex flex-col items-center justify-center pt-4 pb-8">
         <p className="text-xl text-black dark:text-white">
-          Tuesday, 31 May 2022
+          {fromUnixtimeToDayNumberAndYear(location.localtime_epoch)}
         </p>
         <p className="text-xl text-black dark:text-white">
-          Local Time: 12:46 PM
+          Local Time: {fromUnixTimeToLocalTime(location.localtime_epoch)}
         </p>
       </div>
       <div className="flex flex-col justify-center pb-8 text-center">
