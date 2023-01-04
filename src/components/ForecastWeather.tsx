@@ -1,4 +1,4 @@
-import { type OnlyForecastWeatherType } from "../types/foreCastWeatherType";
+import type { OnlyForecastWeatherType } from "../types/foreCastWeatherType";
 import temperatureRangeColors from "../utils/temperatureRange";
 import Image from "next/image";
 import { fromUnixTimeToHours } from "../utils/dateFormatters";
